@@ -1,0 +1,304 @@
+@charset "utf-8";
+
+
+
+/*GENERAL CSS*/
+body{
+  margin: 0;
+  padding: 0;
+  background: #f7f5f5;
+  color: #210210 ;
+  font-family: 'Trajan Pro 3';
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center; 
+}
+
+.red{
+  color:#F00;
+}
+
+#calendar-display{
+  width: 90%;
+  margin: auto;
+  text-align: center;
+}
+
+#calendar-display table{
+  margin: auto;
+}
+
+#calendar-display td, #calendar-display th{
+  padding: 10px 20px;
+}
+
+
+/*MONTH COLOURS*/
+
+.a1 {
+	/*background-color:#ed1c24;*/
+  filter: invert(25%) sepia(90%) saturate(5715%) hue-rotate(348deg) brightness(93%) contrast(99%);
+}
+.a2 {
+	/*background-color:#9e0b0f;*/
+  filter: invert(15%) sepia(44%) saturate(7338%) hue-rotate(349deg) brightness(72%) contrast(104%);
+}
+.a3 {
+	/*background-color:#ec0a74;*/
+  filter: invert(22%) sepia(94%) saturate(6146%) hue-rotate(322deg) brightness(92%) contrast(101%);
+}
+.a4 {
+	/*background-color:#92278f;*/
+  filter: invert(16%) sepia(69%) saturate(3543%) hue-rotate(288deg) brightness(93%) contrast(85%);
+}
+.a5 {
+	/*background-color:#2e3192;*/
+  filter: invert(10%) sepia(88%) saturate(4207%) hue-rotate(241deg) brightness(88%) contrast(84%);
+}
+.a6 {
+	/*background-color:#6dcff6;*/
+  filter: invert(69%) sepia(32%) saturate(673%) hue-rotate(160deg) brightness(104%) contrast(93%);
+}
+.a7 {
+	/*background-color:#007236;*/
+  filter: invert(27%) sepia(87%) saturate(933%) hue-rotate(115deg) brightness(93%) contrast(101%);
+}
+.a8 {
+	/*background-color:#7cc576;*/
+  filter: invert(84%) sepia(10%) saturate(1703%) hue-rotate(63deg) brightness(85%) contrast(84%);
+}
+.a9 {
+	/*background-color:#bde23c;*/
+  filter: invert(92%) sepia(77%) saturate(691%) hue-rotate(14deg) brightness(93%) contrast(91%);
+}
+.a10 {
+	/*background-color:#ffff02;*/
+  filter: invert(94%) sepia(90%) saturate(1973%) hue-rotate(353deg) brightness(105%) contrast(103%);
+}
+.a11 {
+	/*background-color:#f6a900;*/
+  filter: invert(74%) sepia(71%) saturate(2232%) hue-rotate(357deg) brightness(95%) contrast(103%);
+}
+.a12 {
+	/*background-color:#c69c6d;*/
+  filter: invert(70%) sepia(16%) saturate(858%) hue-rotate(351deg) brightness(89%) contrast(93%);
+}
+.a13 {
+	/*background-color:#FFF;*/
+}
+
+
+
+
+
+input[type=button], input[type=submit], input[type=reset], button {
+
+}
+
+
+
+
+
+
+
+/* CARD FLIP */
+
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000px;
+  margin: auto;
+  padding: 40px 0px 60px 0px;
+}
+	/* flip the pane when hovered */
+	.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+	width: 200px;
+	height: 300px;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+}
+
+
+/* CLOCK */
+
+.clock {
+  margin:30px 0px;
+  border-radius: 50%;
+  background: #fff url(clock.png) no-repeat center;
+  background-size: 88%;
+  height: 100px;
+  padding-top: 0px;
+  position: relative;
+  width: 100px;
+}
+
+.clock.simple:after {
+  background: #000;
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 5%;
+  height: 5%;
+  z-index: 10;
+}
+
+.minutes-container, .hours-container, .seconds-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.hours {
+  background: #000;
+  height: 20%;
+  left: 48.75%;
+  position: absolute;
+  top: 30%;
+  transform-origin: 50% 100%;
+  width: 2.5%;
+}
+.minutes {
+  background: #000;
+  height: 40%;
+  left: 49%;
+  position: absolute;
+  top: 10%;
+  transform-origin: 50% 100%;
+  width: 2%;
+}
+.seconds {
+  background:#F00;
+  height: 50%;
+  left: 49.5%;
+  position: absolute;
+  top: 0%;
+  transform-origin: 50% 100%;
+  width: 1%;
+  z-index: 8;
+}
+@keyframes rotate {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+.hours-container {
+  animation: rotate 43200s infinite linear;
+}
+
+.minutes-container {
+  animation: rotate 3600s infinite steps(100);
+}
+.seconds-container {
+  animation: rotate 60s infinite steps(100);
+}
+
+
+
+
+
+/* Holiday btn & Current day*/
+
+.numberbutton{
+ background-color: #000;
+ border: none;
+ border-radius: 4px;
+ color: white;
+ padding: 8px 16px;
+ text-decoration: none;
+ margin: 4px 2px;
+ cursor: pointer;
+}
+
+.currentday{
+ background-color: rgba(0,0,0,0.1);
+ border: solid 2px #000;
+ border-radius: 4px;
+ padding: 4px 12px;
+}
+
+
+
+
+/* Top text display */
+
+#datediv {
+
+ 
+}
+
+.datecolumn {
+  margin: 0px;
+  display: inline-block;
+  padding: 10px;
+}
+
+.datecolumn img{
+  margin: 0px;
+  padding: 0px;
+}
+
+/*Sticky Navbar*/
+
+.header {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+  height: 100%;
+  background: rgb(255,255,255);
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(200,200,200,1) 100%);
+}
+
+#navbar {
+  background-color: black;
+  color: white;
+  width: 100%;
+
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
