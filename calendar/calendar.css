@@ -85,6 +85,8 @@ body{
 }
 .a13 {
 	/*background-color:#FFF;*/
+  filter: invert(100%);
+
 }
 
 

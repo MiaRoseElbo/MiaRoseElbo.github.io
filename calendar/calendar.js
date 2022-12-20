@@ -3,50 +3,50 @@
 var holidays = {
 		//New Year Oracle Month//
         101: "Oracle Day",
-        //Month 01//
+      //Month 01//
         214: "Hathor",
         228: "Cleansing Day",
-        //Month 02//
+      //Month 02//
         304: "Lunasa",
         317: "Day of Lust",
         328: "Cleansing Day",
-        //Month 03//
+      //Month 03//
         425: "Mabon",
         428: "Cleansing Day",
-        //Month 04//
+      //Month 04//
         502: "a",
         508: "Rebellion Day",
         526: "Blood Sacrifice to the Beast",
         528: "Cleansing Day",
-        //Month 05//
+      //Month 05//
         609: "Samhain",
         628: "Cleansing Day",
-        //Month 06//
+      //Month 06//
         701: "a",
         728: "Cleansing Day",
-        //Leap Year onth//
+      //Leap Year onth//
         801: "Oracle Day Leap",
         802: "thing",
         828: "Cleansing Day",
-        //Month 07//
+      //Month 07//
         901: "Samhain",
         928: "Cleansing Day",
-        //Month 08//
+      //Month 08//
         1001: "a",
         1028: "Cleansing Day",
-        //Month 09//
+      //Month 09//
         1101: "a",
         1128: "Cleansing Day",
-        //Month 10//
+      //Month 10//
         1201: "a",
         1228: "Cleansing Day",
-		//Month 11//
+		  //Month 11//
         1301: "a",
         1328: "Cleansing Day",
-		//Month 12//
+		  //Month 12//
         1401: "a",
         1428: "Cleansing Day",
-		//Month 13//
+		  //Month 13//
         1501: "Oracle Day Leap",
         1528: "Cleansing Day",
       }
