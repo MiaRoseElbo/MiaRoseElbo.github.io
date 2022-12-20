@@ -2,10 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Calendar</title>
+<title>Vah'ian Calendar</title>
 <link href="calendar.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script>
+<script type="text/javascript" src="seedrandom.min.js"></script>
 <script type="text/javascript" src="calendar.js"></script>
 
 
@@ -13,16 +12,48 @@
 
 <body>
 
-<navbar><></navbar>
+<div id="datediv">
+ 
+</div>
 
 
-    <p id="date-image"></p><script>document.getElementById("date-image").innerHTML = "<img src='img/"+days+".png' class='"+dayc+"'>"</script>
-    <p class="leadup">The date is</p>
-    <p id="day-display"></p><script>document.getElementById("day-display").innerHTML = day+" "+month+" "+year</script>
-    <p id="dayname-display"></p><script>document.getElementById("dayname-display").innerHTML = monthcolor+" "+daymeaning</script>
-    <p id="date-display"></p><script>document.getElementById("date-display").innerHTML = days+"/"+month_n+"/"+year</script>
-<hr class="rule">
+<div class="header">
 
+  <h2>Today's Oracle</h2>
+
+  <div class="flip-container" ontouchstart="this.classList.toggle("hover");">
+    <div class="flipper">
+      <div class="front" id="front">
+      </div><script>document.getElementById("front").innerHTML = "<img src='img/o"+oraclecard+"f.png' style='width:100%'/>"</script>
+      <div class="back" id="back">
+      </div><script>document.getElementById("back").innerHTML = "<img src='img/o"+oraclecard+"b.png' style='width:100%'/>"</script>
+    </div>
+  </div>
+
+</div>
+
+<div id="navbar">
+   <div class="datecolumn" style="text-align: center;">
+    <div id="date-image"></div>
+      
+    <div id="date-display"></div>
+      
+  </div>
+  <div class="datecolumn" style="text-align: left">
+    <div id="day-display"></div>
+      
+    <div id="dayname-display"></div>
+  </div>
+</div>
+
+<script>
+  document.getElementById("date-image").innerHTML = "<img src='img/"+days+".png' class='"+dayc+"'>"
+  document.getElementById("date-display").innerHTML = days+"/"+month_n+"/"+year
+  document.getElementById("day-display").innerHTML = day+" "+month
+  document.getElementById("dayname-display").innerHTML = monthcolor+" "+daymeaning
+</script>
+
+<div class="content">
 
     <div style="column-count: 3">
       <div style="text-align: right">
@@ -62,7 +93,7 @@
     <p id="date-display"></p>
     <div id="calendar-display"></div>
     <p id="display-info"></p>
-<hr class="rule">
+
 
 <script>
       refresh()
@@ -85,29 +116,6 @@
 
 
 
-
-
-
-
-
-
-
-
-Today is<br>
-
-Your Daily Oracle is:
-
-<div class="flip-container" ontouchstart="this.classList.toggle("hover");">
-  <div class="flipper">
-    <div class="front" id="front">
-    </div><script>document.getElementById("front").innerHTML = "<img src='img/o"+oraclecard+"f.png' style='width:100%'/>"</script>
-    <div class="back" id="back">
-    </div><script>document.getElementById("back").innerHTML = "<img src='img/o"+oraclecard+"b.png' style='width:100%'/>"</script>
-  </div>
-</div>
-
-
-<br /><br />Holy particles must always wear their holy tint.<br /><br />
 
 <div style=" font-family:Open Sans; font-size:10px">
 
@@ -385,5 +393,28 @@ Your Daily Oracle is:
 </table>
 </div>
 The path the sun takes around the celestial sphere is divided into 9 equal parts. Each represents a diferent house or zodiac (based on eneagrams). These houses are divided in three groups, one for feeligs, body, and mind. The zodiac does not define the person you are, but rather the deity overseeing your life.
+<br /><br />Holy particles must always wear their holy tint.<br /><br />
+</div>
+
+
+
+</div>
+
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
+
 </body>
 </html>
