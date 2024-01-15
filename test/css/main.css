@@ -1,0 +1,207 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+:root{
+    --mainColor:#00BABC;
+    --ColorDimmed01:#80dcdd;
+    --ColorDimmed02:#bfedee;
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+  }
+
+/* TITLE */
+
+.title {
+    font-size: 28px;
+}
+
+.title h1 {
+    margin:0;
+    color:#00BABC;
+    font-weight: 800;
+}
+.header{
+    position: static;
+    display: grid;
+    height: auto;
+    width: 100%;
+    min-height: auto;
+    grid-template-rows: repeat(2, min-content) 1fr;
+    grid-template-columns: 100%
+}
+.navbar{
+    width: 100%;
+    background-color: white;
+}
+
+.logo{
+    position: absolute;
+    left: 6em;
+    display: flex;
+    align-items: center;
+}
+.logoIcon{
+    width: 2em;
+}
+.logoText{
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+    margin-left: 0.5em;
+}
+.menu{
+    position: absolute;
+    right: 6em;
+    display: flex;
+    align-items: center;
+}
+.menuList li{
+    display: inline-block;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    margin-left: 1em;
+}
+
+.menuList li a {
+    color:black;
+    text-decoration: none;
+    padding: 0.2em;
+}
+
+.hover {
+    background-image: linear-gradient(to right, rgba(255,255,255,0) 50%, var(--mainColor) 50%);
+    background-position: 0% 50%;
+    background-size: 200% 0;
+    text-decoration: none;
+    transition: all 0.25s ease-out;
+  }
+.hover:hover {
+    background-position: -100% 0;
+    background-size: 200% auto;
+}
+.hover:active {
+    color:white;
+}  
+
+/* ///////////// */
+/* // SECTIONS //*/
+/* ///////////// */
+
+.banner {
+    width: 100%;
+    max-width: 660px;
+    margin: auto;
+    margin-top: 20vh;
+}
+
+section{
+    padding-bottom: 10em;
+    border-bottom: #ddd 2px solid;
+}
+
+/* ///////////////// */
+/* // SVG STYLES /// */
+/* ///////////////// */
+
+.svgLogo{
+    fill:var(--mainColor);
+    stroke-width: 0px;
+}
+
+.colorText{
+    fill:var(--mainColor);
+    font-family: JosefinSansRoman-Regular, 'Josefin Sans';
+    font-variation-settings: 'wght' 400;
+    font-size: 2em;
+}
+
+.boldText{
+    fill:black;
+    font-family: JosefinSansRoman-Bold, 'Josefin Sans';
+    font-variation-settings: 'wght' 700;
+    font-weight: 700;
+}
+
+.mainColorStroke {
+    fill: none;
+    stroke: var(--mainColor);
+    stroke-miterlimit: 10;
+    stroke-width: 3px;
+}
+
+.blackFill {
+    fill: black;
+}
+
+.mainColorFill {
+    fill:var(--mainColor);
+}
+
+.colorDimmed01 {
+    fill: var(--ColorDimmed01);
+}
+
+.colorDimmed02 {
+    fill: var(--ColorDimmed02);
+}
+
+.whiteFill {
+    fill: white;
+}
+
+/* /////////////////// */
+/* // WORK SECTION /// */
+/* /////////////////// */
+
+.workSection{
+margin: auto;
+padding: 8em 0;
+}
+
+.workTextSection {
+    width: 980px;
+    margin:auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+.workTitleH1 {
+    font-weight: 700;
+    font-size: 3em;
+}
+.workTitleH2 {
+    font-weight: 500;
+    font-size: 1.5em;
+    color:#ccc
+}
+.workText {
+    font-size: 1.5em;
+}
+.workText .details{
+    margin: 1em 0 2em 0;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+.workText .details a{
+    color: black;
+    text-decoration: none;
+}
+.workImage {
+    width: 980px;
+    aspect-ratio: 16/9;
+    border-radius: 1em;
+    border: black 1em solid;
+    box-shadow: 0.1em 0.1em 0.2em 0.2em rgba(0,0,0,0.25);
+    background-size: cover;
+    margin:auto;
+}
+.arrow{
+    color:var(--mainColor);
+}
