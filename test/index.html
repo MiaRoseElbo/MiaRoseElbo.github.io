@@ -31,9 +31,23 @@
 		<link rel="stylesheet" href="css/owl.carousel.css">     <!-- text carousel-->
 		<link rel="stylesheet" href="css/bootstrap.css">        <!-- local bootstrap -->	
 		<link rel="stylesheet" href="css/main.css">             <!-- main site css -->
+	<style>
+		:root{
+			--mainColor:#00BABC;
+			--ColorDimmed01:#80dcdd;
+			--ColorDimmed02:#bfedee;
+			--ColorDark01:#009596;
+		}
+	</style>
 	</head>
+	
+	<!--////////////////////////////////////////////////////////////-->
+	<!--///        Oh hey! looks like you found a secret        ///-->
+	<!--///  Wonder what would happen if you went to /secret?  ///--> 
+	<!--/////////////////////////////////////////////////////////-->
+
 	<body>
-		<div class="navbar">
+		<div id="navbar" class="navbar">
 			<div class="logo">
 				<div class="logoIcon">
 					<?xml version="1.0" encoding="UTF-8"?>
@@ -2345,9 +2359,8 @@
 					<div class="workTitleH2">Observatory Operations GUI</div>		
 				</div>
 				<div class="workText">
-					<div>
-						Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
-						Lorem ipsum dolor sit amet, cons ectetuer adipiscing
+					<div class="workTextP">
+						The LSST Operators Visualization Environment (LOVE) is one of the most fundamental pieces for the succesfull operation of the Vera C. Rubin observatory. This giant telescope has more than 65 systems and subsystems, that need to be monitored at all times by Science Experts and Operators, and the fact that that most of the stuff that had to be design was still under construction was a challenge to say the least. I'm increadibly proud and happy to have been part of such an endeavour of science and technology.
 					</div>
 					<div class="details">
 						<a href="#">
@@ -2356,20 +2369,22 @@
 					</div>
 				</div>
 			</div>
-			<div class="workImage" style="background-image: url(assets/img/01.png);">
+			<div class="workImage">
+				<div class="imgDiv">
+					<img class="img_inside" src="assets/img/love_01.png"/>
+				</div>
 			</div>
 		</section>
 
 		<section class="workSection">
 			<div class="workTextSection">
 				<div class="workTitle">
-					<div class="workTitleH1">LOVE</div>
-					<div class="workTitleH2">Observatory Operations GUI</div>		
+					<div class="workTitleH1">FrostForecast</div>
+					<div class="workTitleH2">AI Prediction Dashboard</div>		
 				</div>
 				<div class="workText">
-					<div>
-						Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
-						Lorem ipsum dolor sit amet, cons ectetuer adipiscing
+					<div class="workTextP">
+						Prediction system for anomalous climatic situations at the micro-farm level, which will allow farmers and agricultural technology providers to focus their efforts and reduce production losses due to frost.
 					</div>
 					<div class="details">
 						<a href="#">
@@ -2378,20 +2393,22 @@
 					</div>
 				</div>
 			</div>
-			<div class="workImage" style="background-image: url(assets/img/01.png);">
+			<div class="workImage">
+				<div class="imgDiv">
+					<img class="img_inside" src="assets/img/frost_01.png"/>
+				</div>
 			</div>
 		</section>
 
 		<section class="workSection">
 			<div class="workTextSection">
 				<div class="workTitle">
-					<div class="workTitleH1">LOVE</div>
-					<div class="workTitleH2">Observatory Operations GUI</div>		
+					<div class="workTitleH1">Motor de Prospectos</div>
+					<div class="workTitleH2">Marketing and l</div>		
 				</div>
 				<div class="workText">
-					<div>
-						Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
-						Lorem ipsum dolor sit amet, cons ectetuer adipiscing
+					<div class="workTextP">
+						There's a bunch of nice illustrations and fun secrets all through the website and email marketing campaigns. Had specially some fun setting up AVI, de AI that managed the diferent campaigns and emailed clients directly with leads and info about their users.
 					</div>
 					<div class="details">
 						<a href="#">
@@ -2404,14 +2421,93 @@
 			</div>
 		</section>
 
-		<script src="js/vendor/jquery-2.2.4.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-		<script src="js/vendor/bootstrap.min.js"></script>
-		<script src="js/jquery.ajaxchimp.min.js"></script>
-		<script src="js/owl.carousel.min.js"></script>
-		<script src="js/jquery.nice-select.min.js"></script>
-		<script src="js/jquery.magnific-popup.min.js"></script>
-		<script src="js/main.js"></script>
-		<script src="js/wow.min.js"></script>
+		<section id="contact" class="workSection">
+			<div class="workTextSection">
+				<div class="workTitle">
+					<div class="workTitleH1">Contact</div>
+					<div class="contactList">
+						<a target="_blank" href="https://www.linkedin.com/in/miarose/" class="hover">Linkedin</a>
+						<a href="mailto:miaroseelbo@gmail.com?subject=Hey there!" target="_self" class="hover">Email</a>
+						<a href="#contact" class="hover">Resume</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- <section class="aboutSection">
+			<div class="abotLeft">
+				Digital Communications and New Media graduate from Universidad del Pacífico, with vast work experience in digital marketing agencies, IT companies, and eCommerce; looking to keep on growing professionally, take new challenges, and an opportunity to use my skills and experience in a multidisciplinary team. I love drawing, food, and musicals. When I’m not in the office, or home playing with my kittens, I like to watch movies and play games with my wife. 
+			</div>
+		</section> -->
+
+		<div id="about" class="overlay">
+			<div class="popup">
+			  <a class="close" href="#">&times;</a>
+			  <div class="aboutContent">
+				<div>
+					<h1>About</h1>
+					<div class="aboutDetail">
+						<b class="highlight">Digital Communications</b> and <b class="highlight">New Media</b> graduate from Universidad del Pacífico, with vast work experience in digital marketing agencies, IT companies, eCommerce, and <b class="highlight">Science</b>; looking to keep on growing professionally, take new challenges, and an opportunity to use my skills and experience in a multidisciplinary team. 
+					</div>
+				</div>
+				<div >
+					<h1>Other</h1>
+					<ul class="aboutOther">
+						<li>Ilustration</li>
+						<li>Ilustration</li>
+						<li>Ilustration</li>
+					</ul>I love drawing, food, and musicals. When I’m not in the office, or home playing with my kittens, I like to watch movies and play games with my wife.
+				</div>
+			  </div>
+			</div>
+		  </div>
+		
+
+		 <!-- ▼ • ☽○☾ • ⚢🏳️‍⚧️ • ♅♚ • Ⓐ⛧ • ♥ -->
 	</body>
+	<script>
+			
+			var palettes = [
+			  ['#00BABC', '#80dcdd', '#bfedee', '#009596'],
+			  ['#efc100', '#ffe05c', '#ffeda1', '#aa8e17'],
+			  ['#ea2da6', '#ff64d0', '#ffc0ec', '#a52b7f'],
+			  ['#9f46ce', '#bc6fef', '#d99fff', '#7738a0'],
+			];
+			var randomPalette = palettes[Math.floor(Math.random() * palettes.length)];
+			
+			document.documentElement.style.setProperty('--mainColor', randomPalette[0]);
+			document.documentElement.style.setProperty('--ColorDimmed01', randomPalette[1]);
+			document.documentElement.style.setProperty('--ColorDimmed02', randomPalette[2]);
+			document.documentElement.style.setProperty('--ColorDark01', randomPalette[3]);
+
+			var prevScrollpos = window.pageYOffset;
+			window.onscroll = function() {
+				var currentScrollPos = window.pageYOffset;
+				if (prevScrollpos > currentScrollPos) {
+					document.getElementById("navbar").style.top = "0";
+				} else {
+					document.getElementById("navbar").style.top = "-4em";
+				}
+				prevScrollpos = currentScrollPos;
+			}
+
+// 		       ______              
+//        .d$$$******$$$$c.        
+//     .d$P"            "$$c      
+//    $$$$$.           .$$$*$.    
+//  .$$ 4$L*$$.     .$$Pd$  '$b   
+//  $F   *$. "$$e.e$$" 4$F   ^$b  
+// d$     $$   z$$$e   $$     '$. 
+// $P     `$L$$P` `"$$d$"      $$ 
+// $$     e$$F       4$$b.     $$ 
+// $b  .$$" $$      .$$ "4$b.  $$ 
+// $$e$P"    $b     d$`    "$$c$F 
+// '$P$$$$$$$$$$$$$$$$$$$$$$$$$$  
+//  "$c.      4$.  $$       .$$   
+//   ^$$.      $$ d$"      d$P    
+//     "$$c.   `$b$F    .d$P"     
+//       `4$$$c.$$$..e$$P"        
+//           `^^^^^^^`
+			
+	</script>
 </html>
