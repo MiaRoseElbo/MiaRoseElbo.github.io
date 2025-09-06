@@ -442,6 +442,10 @@ padding: 8em 0;
     font-size: 16px;
   }
 
+  section {
+    padding-bottom: 3em;
+  }
+
   /* Navbar */
   .logo {
     position: static;
@@ -451,36 +455,42 @@ padding: 8em 0;
 
   .menu {
     position: static;
-    justify-content: center;
+    justify-content: flex-start;
     margin-top: 0.5em;
   }
 
   .menuList{
     display: inline-flex;
-    width: 60%;
-    justify-content: space-around;
+    justify-content: flex-start;
   }
 
   .menuList li {
     display: block;
-    margin: 0.5em 0;
-    text-align: center;
+    margin: 0 1.6em 0 0;
   }
 
   /* Banner */
   .banner {
-    margin-top: 10vh;
-    padding: 0 1em;
-    max-width: 100%;
+    margin-top: 22vh;
+    max-width: 90%;
+  }
+  
+  .colorText{
+    font-size: 1.8em;
   }
 
   /* Work Section */
+  .workSection{
+    padding: 3em 0;
+  }
   .workTextSection {
     width: 90%;
     grid-template-columns: 1fr;
     padding: 0 1em;
   }
-
+  .workTitleH2{
+    margin: 1em 0;
+  }
   .workImage {
     width: 90%;
     border-width: 0.5em;
@@ -492,7 +502,7 @@ padding: 8em 0;
 
   /* Inside Work */
   .overlayWork {
-    width: 94%;
+    width: 100%;
   }
   .popup{
     margin: 6px;
@@ -506,22 +516,23 @@ padding: 8em 0;
   /* About Section */
   .aboutContent {
     grid-template-columns: 1fr;
-    margin: 0;
-    height: auto;
+    margin: 1em;
+    overflow-y: scroll
+  }
+
+  .aboutContact {
+    margin-top: 2em;
   }
 
   .aboutDetail,
   .aboutOther,
   .aboutExtra {
     margin-right: 0;
-    font-size: 1em;
+    font-size: 1.4em;
   }
 
-  .hoverText {
-    position: relative;
-    width: 100%;
-    left: 0;
-    top: auto;
+  .hoverText, .aboutAlso {
+    display: none;
   }
 
   /* Contact */
