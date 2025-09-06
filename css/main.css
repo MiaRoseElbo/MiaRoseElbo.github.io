@@ -434,3 +434,103 @@ padding: 8em 0;
 .bolder{
   font-weight: 700;
 }
+
+/* MOBILE RESPONSIVE RULES */
+@media (max-width: 768px) {
+  /* General font scaling */
+  body {
+    font-size: 16px;
+  }
+
+  /* Navbar */
+  .logo {
+    position: static;
+    justify-content: flex-start;
+    margin-bottom: 1em;
+  }
+
+  .menu {
+    position: static;
+    justify-content: center;
+    margin-top: 0.5em;
+  }
+
+  .menuList{
+    display: inline-flex;
+    width: 60%;
+    justify-content: space-around;
+  }
+
+  .menuList li {
+    display: block;
+    margin: 0.5em 0;
+    text-align: center;
+  }
+
+  /* Banner */
+  .banner {
+    margin-top: 10vh;
+    padding: 0 1em;
+    max-width: 100%;
+  }
+
+  /* Work Section */
+  .workTextSection {
+    width: 90%;
+    grid-template-columns: 1fr;
+    padding: 0 1em;
+  }
+
+  .workImage {
+    width: 90%;
+    border-width: 0.5em;
+  }
+
+  .imgDiv{
+    width: 100%;
+  }
+
+  /* Inside Work */
+  .overlayWork {
+    width: 94%;
+  }
+  .popup{
+    margin: 6px;
+    padding: 1em 0;
+  }
+  .insideWork {
+    width: 90%;
+    padding: 0 1em;
+  }
+
+  /* About Section */
+  .aboutContent {
+    grid-template-columns: 1fr;
+    margin: 0;
+    height: auto;
+  }
+
+  .aboutDetail,
+  .aboutOther,
+  .aboutExtra {
+    margin-right: 0;
+    font-size: 1em;
+  }
+
+  .hoverText {
+    position: relative;
+    width: 100%;
+    left: 0;
+    top: auto;
+  }
+
+  /* Contact */
+  .contactList {
+    display: block;
+  }
+
+  .contactList a {
+    display: block;
+    margin: 0.5em 0;
+  }
+}
