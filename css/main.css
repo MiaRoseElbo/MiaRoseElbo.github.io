@@ -272,8 +272,10 @@ padding: 8em 0;
   
   .popup h2 {
     margin-top: 0;
-    color: #666;
-    font-family: "Trebuchet MS", Tahoma, Arial, sans-serif;
+    color: black;
+    border-bottom: 1px solid #eaeaea;
+    font-family: 'Nunito';
+    padding-bottom: 0.4em;
   }
   .close {
     font-family: 'Josefin Sans', sans-serif;
@@ -390,9 +392,24 @@ padding: 8em 0;
     margin:auto;
 }
 
+.innerSection .innerTitle {
+    max-width: 640px;
+    margin: 3em auto;
+}
+
+.innerSection .innerText {
+    max-width: 640px;
+    margin: 3em auto;
+}
+
 .innerSection .innerText p {
-    font-size: 1.2em;
+    font-size: 1.4em;
+    line-height: 1.6em;
     font-family: "Nunito", sans-serif;
+}
+
+.innerSection .innerText p b {
+    font-weight:700;
 }
 
 .innerImage img{
@@ -408,7 +425,12 @@ padding: 8em 0;
 .innerImageText{
     text-align: center;
     margin: 0.2em 0 1em;
+    font-family: "Nunito", sans-serif;
 }
 .insideWork .workTitleH2{
     margin-bottom: 2em;
+}
+
+.bolder{
+  font-weight: 700;
 }
