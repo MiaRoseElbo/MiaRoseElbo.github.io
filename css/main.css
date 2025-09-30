@@ -435,6 +435,52 @@ padding: 8em 0;
   font-weight: 700;
 }
 
+/* SHAPES ANIMATIONS */
+
+.arrow{
+ width: 5em;
+ margin: auto;
+ animation-name: floating;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    position: relative;
+    top: 4em;
+}
+.arrow svg{
+ width: 100%;
+}
+.shapes {  
+    position: absolute;
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-left: 30px;
+    margin-top: 5px;
+}
+
+.shape{
+  animation-name: rotate;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  width: 30px;
+  height: 30px;
+  background-color: var(--mainColor);
+}
+
+@keyframes floating {
+    from { transform: translate(0,  0px); }
+    40%  { transform: translate(0, 2em); }
+    to   { transform: translate(0, -0px); }    
+}
+
+@keyframes rotate {
+    from { transform: rotate(0); }
+    50%   { transform: rotate(360deg);}    
+}
+
+
 /* MOBILE RESPONSIVE RULES */
 @media (max-width: 768px) {
   /* General font scaling */
