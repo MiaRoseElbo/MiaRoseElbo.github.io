@@ -437,7 +437,7 @@ padding: 8em 0;
 
 /* SHAPES ANIMATIONS */
 
-.arrow{
+.chevron{
  width: 5em;
  margin: auto;
  animation-name: floating;
@@ -447,7 +447,7 @@ padding: 8em 0;
     position: relative;
     top: 4em;
 }
-.arrow svg{
+.chevron svg{
  width: 100%;
 }
 .shapes {  
