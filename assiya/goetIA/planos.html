@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GoetIa</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div id="container">
+        <marquee behavior="alternate" scrollamount="7">
+            Bienvenida Aethernauta al más grande compendio de lo oculto!
+        </marquee>
+        <h1>
+            <a href="./index.html">
+                <img src="../img/GoetIA-Browser-Icon.png" alt="GoetIA Icon" class="logo-icon">
+                GoetIA
+            </a>
+        </h1>
+        <nav>
+            <a href="./entidades.html">Entidades</a> |
+            <a href="./mortales.html">Mortales</a> |
+            <a href="./planos.html">Planos</a> |
+            <a href="./sectas.html">Sectas</a> |
+            <a href="./otros.html">Otros Conceptos</a>
+        </nav>
+        
+        <h1>Planos</h1>
+        <div style="display: flex; justify-content: center; margin: 2em 0;">
+            <svg width="420" height="260" viewBox="0 0 420 260" style="background:radial-gradient(ellipse at center, #181818 0%, #000 100%);">
+                <!-- Outer mystical circle -->
+                <circle cx="210" cy="130" r="120" fill="none" stroke="#00ff00" stroke-width="2"/>
+                <!-- Inner mystical circle -->
+                <circle cx="210" cy="130" r="90" fill="none" stroke="#FF00FF" stroke-width="1" stroke-dasharray="4,4"/>
+                <!-- Four cardinal points -->
+                <line x1="210" y1="10" x2="210" y2="250" stroke="#00ff00" stroke-width="0.7" stroke-dasharray="2,6"/>
+                <line x1="10" y1="130" x2="410" y2="130" stroke="#00ff00" stroke-width="0.7" stroke-dasharray="2,6"/>
+                <!-- Decorative stars -->
+                <g fill="#fff" opacity="0.7">
+                    <circle cx="60" cy="40" r="1.2"/>
+                    <circle cx="370" cy="60" r="1.5"/>
+                    <circle cx="120" cy="220" r="1"/>
+                    <circle cx="340" cy="200" r="1.3"/>
+                    <circle cx="210" cy="30" r="1.7"/>
+                    <circle cx="210" cy="230" r="1.1"/>
+                    <circle cx="80" cy="180" r="0.9"/>
+                    <circle cx="370" cy="170" r="1.2"/>
+                </g>
+                <!-- La Gran División (occult ellipse) -->
+                <ellipse cx="210" cy="130" rx="170" ry="80" fill="none" stroke="#00ff00" stroke-width="2" stroke-dasharray="8,7"/>
+                <text x="210" y="48" text-anchor="middle" font-size="15" fill="#FF00FF" font-family="serif" style="letter-spacing:2px;">LA GRAN DIVISIÓN</text>
+                <!-- Assiya (left world) -->
+                <circle cx="90" cy="130" r="48" fill="black" stroke="#00ff00" stroke-width="3"/>
+                <text x="90" y="130" text-anchor="middle" font-size="19" fill="#00ff00" font-family="serif" dy="7" style="text-shadow:0 0 2px #fff;">ASSIYA</text>
+                <!-- Occult sigil for Assiya -->
+                <g stroke="#00ff00" stroke-width="1.2" fill="none" opacity="0.7">
+                    <polygon points="90,110 100,140 80,140"/>
+                    <circle cx="90" cy="130" r="13"/>
+                    <line x1="90" y1="117" x2="90" y2="143"/>
+                </g>
+                <!-- Kahil (right world) -->
+                <circle cx="330" cy="130" r="48" fill="#181818" stroke="#00ff00" stroke-width="3"/>
+                <text x="330" y="130" text-anchor="middle" font-size="19" fill="#00ff00" font-family="serif" dy="7" style="text-shadow:0 0 2px #000;">KAHIL</text>
+                <!-- Occult sigil for Kahil -->
+                <g stroke="#00ff00" stroke-width="1.2" fill="none" opacity="0.7">
+                    <ellipse cx="330" cy="130" rx="13" ry="13"/>
+                    <line x1="317" y1="130" x2="343" y2="130"/>
+                    <line x1="330" y1="117" x2="330" y2="143"/>
+                    <polyline points="323,123 330,137 337,123"/>
+                </g>
+                <!-- Segador (ferry) - stylized -->
+                <g>
+                    <ellipse cx="210" cy="130" rx="22" ry="8" fill="#00ff00" opacity="0.18"/>
+                    <rect x="196" y="117" width="28" height="18" rx="7" fill="#222" stroke="#00ff00" stroke-width="1.5"/>
+                    <circle cx="210" cy="126" r="6" fill="#00ff00" stroke="#00ff00" stroke-width="1"/>
+                    <rect x="207" y="132" width="6" height="8" rx="2" fill="#00ff00" stroke="#00ff00" stroke-width="1"/>
+                    <!-- Segador staff -->
+                    <line x1="210" y1="126" x2="210" y2="140" stroke="#00ff00" stroke-width="1"/>
+                    <ellipse cx="210" cy="140" rx="2" ry="1.2" fill="#00ff00"/>
+                </g>
+                <!-- Segador label in occult font style -->
+                <text x="210" y="150" text-anchor="middle" font-size="12" fill="#00ff00" font-family="serif" style="letter-spacing:1.5px;">SEGADOR</text>
+                <!-- Ferry path (dashed line) -->
+                <line x1="138" y1="130" x2="196" y2="130" stroke="#00ff00" stroke-width="1.5" stroke-dasharray="5,5"/>
+                <line x1="224" y1="130" x2="282" y2="130" stroke="#00ff00" stroke-width="1.5" stroke-dasharray="5,5"/>
+                <!-- Labels for worlds -->
+                <text x="90" y="190" text-anchor="middle" font-size="13" fill="#00ff00" font-family="serif" style="letter-spacing:1px;">MUNDO DE LAS ACCIONES</text>
+                <text x="330" y="190" text-anchor="middle" font-size="13" fill="#00ff00" font-family="serif" style="letter-spacing:1px;">INFRAMUNDO</text>
+            </svg>
+        </div>
+        <p>La existencia como la conocemos está dividida en 2 grandes mundos, separados por un vacío hueco inhabitable.</p>
+        <div class="section" id="about">
+            <a href="#assiya">Assiya</a> |
+            <a href="#kahil">Kahil</a> |
+            <a href="#division">La Gran División</a>
+            <a href="#nidos">Nidos</a>
+        </div>
+        <div class="section" id="assiya">
+            <h2>Assiya</h2>
+            <p>
+                También conocido como el Mundo de las Acciones, Assiya es el plano donde convergen tanto lo material como lo inmaterial. Es el mundo que los humanos y seres vivos perciben, moldean y experimentan a diario. Aquí, cada acción, pensamiento y emoción tiene un impacto directo, aunque invisible, en la estructura misma de este plano. Assiya es el escenario de las decisiones, donde el libre albedrío toma forma y las consecuencias se despliegan en el tiempo. Aunque parece estable, este mundo está en constante flujo, con fuerzas invisibles entrelazadas que determinan su equilibrio.
+            </p><p>Assiya no es solo el hogar de los humanos, sino también el espacio donde entidades de otros planos pueden intervenir y alterar la realidad. Las barreras entre este mundo y su antítesis, Kahil, pueden debilitarse bajo ciertas circunstancias, permitiendo que influencias oscuras y perturbadoras afecten lo cotidiano. Sin embargo, es en Assiya donde los Recipientes, las Aves, y otros seres conscientes de las realidades ocultas luchan para mantener el orden y evitar que se rompa el delicado balance entre mundos.</p>
+        </div>
+        <div class="section" id="kahil">
+            <h2>Kahil</h2>
+<p>Conocido como el Inframundo, Kahil es el plano de los muertos, un lugar oscuro y distante donde las Almas van tras abandonar el plano de Assiya. Es un espacio profundamente inestable, su tierra infertil y aire esteril son coronados por un agujero negro, regido por leyes que desafían la comprensión humana. Kahil no sólo es un reino de muerte, sino de corrupción, donde el olvido toman forma. Todo lo que una vez tuvo vida en Assiya, aquí termina, y se retuerce en formas grotescas bajo la influencia de fuerzas que trascienden la lógica terrenal.
+</p><p>
+Kahil es es la antítesis de nuestro mundo y está absolutamente separado de Assiya, como si fuese un reflejo del mismo. Aún así, bajo ciertas condiciones, entidades del inframundo, Parásitos, pueden cruzar La Gran División, e infiltrarse en Assiya, el mundo de las acciones. 
+</p><p>
+El mero contacto con algo de Kahil es peligroso, pues la influencia de este plano puede enconarse en nuestro mundo, provocando sepsis en el tejido del mundo, corrompiendo lo vivo, y acelerando su decadencia.
+</p>
+        </div>
+        <div class="section" id="division">
+            <h2>La Gran División</h2>
+            <p>
+La Gran División es el vacío hueco que separa Assiya, el mundo de las acciones y los vivos, de Kahil, el Inframundo, la esfera de los muertos. Esta frontera es a la vez física y espiritual, un espacio inquebrantable que impide que los dos planos entren en contacto. Para aquellos que poseen conocimiento de lo oculto, la Gran División es una realidad omnipresente.
+</p><p>
+Nada puede existir dentro de la Gran Divisón, excepto por los Segadores. Extrañas entidades que, de hecho, sólo pueden existir en ese espacio vacío. Su función principal es de acarrear las Almas desde nuestro mundo a la esfera de los muertos. Al morir, las Alma instintivamente buscan una Puerta que la hacia la Gran Divisón, donde será acarreada por un Segadores hacia el descanso eterno en Kahil. Sin embargo, no todas las almas encuentran su camino, y algunas quedan atrapadas en el limbo de nuestro plano, incapaces de cruzar La Gran División. Es aquí donde entran las Aves, cuya labor ancestral es encontrar estas almas perdidas y guiarlas hacia una Puerta.
+</p><p>
+Aunque La Gran División parece inmutable, existen fuerzas que intentan eliminarla. Algunas bandadas como los Tordos, buscan fusionar ambos mundos, creyendo que la creación no estará completa hasta que la vida y la muerte se unan en una sola realidad. Esto, sin embargo, sería un cataclismo para la existencia misma, ya que desdibujaría los límites que definen la vida, la muerte, y la esencia de todo lo que es.            </p>
+        </div>
+        <div class="section" id="nidos">
+            <h2>Nidos</h2>
+            <p>
+                Los Nidos son una anomalía dentro de nuestro mundo que, sin embargo, están separado de él. Este lugar actúa como el punto de anclaje de una Infección, donde su influencia es más fuerte y su control, absoluto. A medida que uno se acerca al Nido, el entorno comienza a distorsionarse, y las leyes de la física se vuelven cada vez más inestables, como si la misma realidad estuviera enconada por la presencia de la entidad.
+</p><p>
+Dentro del Nido, la lógica y las reglas del mundo exterior no tienen lugar. La gravedad puede fluctuar, el tiempo puede detenerse, acelerarse, o incluso retroceder, y los objetos pueden comportarse de maneras imposibles, como si estuvieran guiados por una voluntad propia. El espacio puede parecer tanto vasto como claustrofóbico al mismo tiempo, desafiando la percepción y confundiendo los sentidos. Este es el dominio total de la Infección, como si fuese una extención de la misma.
+</p><p>
+Es por esto que un Nido posee cualidades únicas, con paisajes que cambian dependiendo de la entidad que lo habite. Podría ser un laberinto de pasillos interminables que se retuercen y giran en ángulos imposibles, o un pantano de sombras líquidas que amenaza con consumir todo a su paso.
+</p><p>
+Entrar en un Nido es una tarea peligrosa y desorientadora, pero es la única forma de eliminar una Infección de nuestro mundo. Aquí, la entidad puede ser enfrentada en su punto más vulnerable, aunque sigue siendo extremadamente peligrosa.
+</p><p>
+Cuando una Infección es curada, su Nido e influencia corrompedora desaparecen por completo.</p>
+            </div>
+        <nav>
+            <a href="./entidades.html">Entidades</a> |
+            <a href="./mortales.html">Mortales</a> |
+            <a href="./planos.html">Planos</a> |
+            <a href="./sectas.html">Sectas</a> |
+            <a href="./otros.html">Otros Conceptos</a>
+        </nav>
+        <div class="footer">
+            &copy; 1994-1996 GoetIa | Creadio por HexXx
+        </div>
+    </div>
+</body>
+</html>

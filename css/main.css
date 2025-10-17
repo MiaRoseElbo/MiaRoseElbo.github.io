@@ -1,7 +1,5 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000');
-
 
 body {
     font-family: 'Josefin Sans', sans-serif;
@@ -214,12 +212,104 @@ padding: 8em 0;
     background-size: cover;
     margin:auto;
 }
+
 .arrow{
     color:var(--mainColor);
 }
 
 .img_inside{
     width: 100%;
+}
+
+.workImage{
+    overflow: hidden;
+    background-color: black;
+}
+
+.imgDiv{
+    width: 997px;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.aboutSection{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    background-color: white;
+    height: 100vh;
+    padding: 4em;
+}
+
+/* ////////////////////////// */
+/* // WORK SECTION PHONE /// */
+/* //////////////////////// */
+
+.workSectionPhone{
+margin: auto;
+padding: 8em 0;
+}
+
+.workSectionPhone {
+  width: 980px;
+  margin:auto;
+  display: grid;
+grid-template-columns: repeat(2, 1fr) repeat(3, 0);
+grid-template-rows: 1fr repeat(4, 0);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+}
+
+.workImagePhone {
+  width: 275px;
+  height: 592px;
+  border-radius: 40px 40px 40px 40px;
+  border: black 1em solid;
+  box-shadow: 0.1em 0.1em 0.2em 0.2em rgba(0,0,0,0.25);
+  background-size: cover;
+  margin:auto;
+  grid-area: 1 / 1 / 3 / 2;
+  overflow: hidden;
+}
+
+.imgInsidePhone{
+  width: 275px;
+  height: 1092px;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  animation: imgPhoneSlide 8s ease-in-out infinite;
+}
+
+@keyframes imgPhoneSlide {
+  0% {
+    top: 0px;
+    animation-timing-function: ease-in;
+  }
+  25% {
+    top: -250px;
+    animation-timing-function: ease;
+  }
+  50% {
+    top: -500px;
+    animation-timing-function: ease;
+  }
+  75% {
+    top: -250px;
+    animation-timing-function: ease;
+  }
+  100% {
+    top: 0px;
+    animation-timing-function: ease-out;
+  }
+}
+
+.imgInsidePhoneOverlay{
+    width: 275px;
+    height: 593px;
+    position: relative;
+    top: -1097px;
+    left: 0px;
 }
 
 .workImage{

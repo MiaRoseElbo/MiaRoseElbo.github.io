@@ -1,0 +1,81 @@
+        @import url('https://fonts.googleapis.com/css?family=Uncial+Antiqua&display=swap');
+        body {
+            background: black url('https://www.transparenttextures.com/patterns/stardust.png');
+            color: #00FF00;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+        }
+        .logo-icon {
+            height: 80px;
+            vertical-align: middle;
+            margin: auto;
+            display: inline-block;
+        }
+        #container {
+            width: 760px;
+            margin: 0 auto;
+            background: black;
+            border: 4px double #FF00FF;
+            padding: 20px;
+            box-shadow: 0 0 20px #660066;
+        }
+        h1, h2 {
+            color: #FF00FF;
+            text-align: center;
+            letter-spacing: 2px;
+            font-family: 'Uncial Antiqua';
+        }
+        h1 a {
+            text-decoration: none;
+            color: inherit;
+        }
+        nav {
+            background: #222;
+            border: 2px dashed #00FF00;
+            padding: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        nav a {
+            color: #00FFFF;
+            text-decoration: underline;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+        .section {
+            margin-bottom: 30px;
+            border-bottom: 1px dotted #FF00FF;
+            padding-bottom: 20px;
+        }
+        .ascii {
+            font-family: monospace;
+            color: #FF00FF;
+            text-align: center;
+            white-space: pre;
+            margin: 20px 0;
+        }
+        marquee {
+            color: #FF00FF;
+            font-size: 1.2em;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            margin-bottom: 10px;
+        }
+        .footer {
+            text-align: center;
+            color: #888;
+            font-size: 0.9em;
+            margin-top: 30px;
+        }
+        a:visited {
+            color: #9900CC;
+        }
+        a:hover {
+            color: #FFFF00;
+            background: #222;
+        }
+        img {
+            margin:auto;
+            display: block;
+            max-width: 100%;
+        }

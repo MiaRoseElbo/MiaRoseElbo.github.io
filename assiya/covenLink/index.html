@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CovenLink - The 90s Social Network</title>
+    <style>
+        body {
+            background: #000 url('https://www.transparenttextures.com/patterns/stardust.png');
+            color: #00ff00;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 800px;
+            margin: 0 auto;
+            background: #111;
+            border: 5px double #ff00ff;
+            box-shadow: 0 0 30px #0ff;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 3em;
+            color: #ff00ff;
+            text-shadow: 2px 2px 0 #0ff, 0 0 10px #fff;
+            text-align: center;
+            letter-spacing: 2px;
+            margin-bottom: 0;
+        }
+        marquee {
+            color: #0ff;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        nav {
+            background: #222;
+            border: 2px dashed #0ff;
+            padding: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        nav a {
+            color: #ff00ff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        nav a:hover {
+            text-decoration: underline;
+            color: #0ff;
+        }
+        .profile-pic {
+            float: left;
+            margin-right: 20px;
+            border: 3px solid #0ff;
+            box-shadow: 0 0 10px #ff00ff;
+            width: 120px;
+            height: 120px;
+            background: #222;
+        }
+        .about {
+            overflow: auto;
+            margin-bottom: 30px;
+        }
+        .friends {
+            background: #222;
+            border: 2px dotted #ff00ff;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .friends img {
+            width: 50px;
+            height: 50px;
+            border: 2px solid #0ff;
+            margin: 5px;
+            vertical-align: middle;
+        }
+        .guestbook {
+            background: #222;
+            border: 2px dashed #0ff;
+            padding: 10px;
+        }
+        .blink {
+            animation: blink 1s steps(2, start) infinite;
+            color: #ff0;
+        }
+        @keyframes blink {
+            to {
+                visibility: hidden;
+            }
+        }
+        .footer {
+            text-align: center;
+            color: #888;
+            font-size: 0.9em;
+            margin-top: 30px;
+        }
+        /* 90s animated gif */
+        .gif {
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CovenLink <img src="https://www.animatedimages.org/data/media/36/animated-bat-image-0012.gif" class="gif" alt="bat gif"></h1>
+        <marquee behavior="alternate" scrollamount="8">Welcome to CovenLink! The raddest place to hang with your coven online. <span class="blink">Sign the guestbook!</span></marquee>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">My Profile</a>
+            <a href="#">Friends</a>
+            <a href="#">Guestbook</a>
+            <a href="#">Webrings</a>
+        </nav>
+        <div class="about" id="profile"></div>
+        <div class="friends" id="friends"></div>
+        <div class="guestbook" id="guestbook"></div>
+        <div class="footer">
+            <p>
+                <img src="https://www.animatedimages.org/data/media/36/animated-bat-image-0013.gif" class="gif" alt="bat">
+                <span class="blink">Best viewed in Netscape Navigator 1.1</span> | &copy; 1994 CovenLink
+            </p>
+        </div>
+    </div>
+    <script>
+let allUsers = [];
+let currentUserId = null;
+
+// Load data.json and show profile
+function loadProfile(userId) {
+  fetch('data.json')
+    .then(response => response.json())
+    .then(data => {
+      allUsers = data.users;
+      const user = allUsers.find(u => u.id === userId) || allUsers[0];
+      currentUserId = user.id;
+
+      // Profile
+      document.getElementById('profile').innerHTML = `
+        <img src="${user.avatar}" alt="profile" class="profile-pic">
+        <h2>~*~ ${user.name} ~*~</h2>
+        <p>
+          <b>Location:</b> ${user.location}<br>
+          <b>Status:</b> <span class="blink">${user.status}</span><br>
+          <b>Bio:</b> ${user.bio}<br>
+          <b>Interests:</b> ${user.interests.map(i => `<span>${i}</span>`).join(', ')}
+        </p>
+      `;
+
+      // Friends (as clickable avatars)
+      document.getElementById('friends').innerHTML = `
+        <h3>My Coven (Friends)</h3>
+        ${user.friends.map(fid => {
+          const f = allUsers.find(u => u.id === fid);
+          if (!f) return '';
+          return `<a href="#" onclick="loadProfile('${f.id}');return false;">
+            <img src="${f.avatar}" alt="${f.name}" title="${f.name}">
+          </a>`;
+        }).join(' ')}
+      `;
+
+      // Guestbook
+      document.getElementById('guestbook').innerHTML = `
+        <h3>Guestbook</h3>
+        ${user.guestbook.map(g => `<p><b>${g.name}:</b> ${g.msg} <img src="${g.icon}" class="gif" alt=""></p>`).join('')}
+      `;
+    });
+}
+
+// On page load, show the first user or user from hash
+window.onload = function() {
+  // Optionally, use URL hash for direct linking
+  const hash = window.location.hash.replace('#', '');
+  loadProfile(hash || 'mia');
+};
+</script>
+</body>
+</html>

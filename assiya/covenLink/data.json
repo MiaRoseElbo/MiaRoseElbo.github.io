@@ -1,0 +1,55 @@
+{
+  "users": [
+    {
+      "id": "mia",
+      "name": "Mia Rose",
+      "avatar": "img/cruz.png",
+      "location": "Cyberspace",
+      "status": "Online",
+      "bio": "Witchy coder, lover of the occult and 90s web.",
+      "interests": ["HTML", "vampires", "zines", "skateboarding", "hacking the planet"],
+      "friends": ["hexgirl", "darkmage"],
+      "guestbook": [
+        {
+          "name": "HexGirl92",
+          "msg": "This site is wicked cool!",
+          "icon": "img/friend1.png"
+        }
+      ]
+    },
+    {
+      "id": "hexgirl",
+      "name": "HexGirl92",
+      "avatar": "img/friend1.png",
+      "location": "Witch City",
+      "status": "Offline",
+      "bio": "Hexes, potions, and pixel art.",
+      "interests": ["potions", "pixel art", "cats"],
+      "friends": ["mia", "darkmage"],
+      "guestbook": [
+        {
+          "name": "Mia Rose",
+          "msg": "Love your pixel cats!",
+          "icon": "img/profile.png"
+        }
+      ]
+    },
+    {
+      "id": "darkmage",
+      "name": "DarkMage",
+      "avatar": "img/friend2.png",
+      "location": "Shadow Realm",
+      "status": "Online",
+      "bio": "Master of shadows and retro games.",
+      "interests": ["retro games", "magic", "goth music"],
+      "friends": ["mia"],
+      "guestbook": [
+        {
+          "name": "Mia Rose",
+          "msg": "See you at the next midnight chat!",
+          "icon": "img/profile.png"
+        }
+      ]
+    }
+  ]
+}

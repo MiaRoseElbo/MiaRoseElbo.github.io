@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BioMancer</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="bio-img-wrap">
+            <img src="img/chart-01.jpg" alt="BioMancer" class="bio-img" id="bioImg">
+            <div class="bio-img-gradient" id="bioImgGradient"></div>
+        </div>
+        <div class="main-content">
+            <h1>ANALIZIS DE ALMA</h1>
+            <div id="step1" class="step active">
+                <h2>Paso 1: Habilidades</h2>
+                <p>Selecciona <b>2</b> habilidades en las que eres <b>bueno</b>, y <b>3</b> en las que eres <b>malo</b>.<br>
+                <ul class="skills-list" id="skillsList"></ul>
+                <button id="toStep2" disabled>Siguiente</button>
+            </div>
+            <div id="step2" class="step">
+                <h2>Step 2: Agenda</h2>
+                <ul class="agenda-list" id="agendaList"></ul>
+                <button id="toStep3" disabled>Next</button>
+            </div>
+            <div id="step3" class="step">
+                <h2>Step 3: Pacto</h2>
+                <ul class="pact-list" id="pactList"></ul>
+                <button id="toStep4" disabled>Next</button>
+            </div>
+            <div id="step4" class="step">
+                <h2>Step 4: Muelles</h2>
+                <ul class="powers-list" id="powersList"></ul>
+                <button id="finish" disabled>Resultado</button>
+            </div>
+            <div id="composite" class="composite" style="display:none"></div>
+        </div>
+    </div>
+    <script>
+        // Data with descriptions
+        const skills = [
+            { name: "Coordinación", desc: "Disparar, lanzar, agarrar", color: "#ffea00"},
+            { name: "Vigilia", desc: "Observar, reconocer, encontrar", color: "#ffea00"},
+            { name: "Fuerza", desc: "Aplicar fuerza y violencia", color: "#ff2222"},
+            { name: "Cuerpo", desc: "Resistencia y condicionamiento físico", color: "#ff2222"},
+            { name: "Autoridad", desc: "El poder a través del oficialismo", color: "#ff17db"},
+            { name: "Secreto", desc: "Ocultar, robar, actos ilegales", color: "#ff17db"},
+            { name: "Razón", desc: "Investigar, analizar, estudiar", color: "#006cff"},
+            { name: "Interfáz", desc: "Utilizar la tecnología", color: "#006cff"}
+        ];
+        const agendas = [
+            { name: "Cuidador", desc: "El cuidador es el tipo de personaje que está siempre preocupado de que el resto esté bien, viven para servir. Suelen ser personas generosas, propensas a actos desinteresados, lo que los lleva también a valorar la supervivencia del resto por sobre la propia." },
+            { name: "Lider", desc: "Su objetivo es liderar y guiar al resto, por lo que suelen tener una personalidad carismática y ser buenos comunicadores, desafortunadamente no les va bien no tener el control sobre algo y suelen ser algo paranoicos de perder su poder de decisión." },
+            { name: "Artista", desc: "El artista busca darle orden al caos a través de la construcción de obras de todo tipo. Suelen ser personas visionarias con mucha motivación y creatividad sin límites, pero que a veces les cuesta poder plasmar eso que tanto desean comunicar. A veces, el trabajo de crear puede pasarles la cuenta, y los Artistas suelen estar más enfocados en lo que construyen que con el propósito de este." },
+            { name: "Explorador", desc: "Este arquetipo es un espíritu inquieto que halla su propósito en la búsqueda constante de lo desconocido. Son aventureros curiosos, independientes y desafiantes. A menudo, su deseo insaciable de lo nuevo los lleva a tomar riesgos innecesarios, ya que la curiosidad los carcome. " },
+            { name: "Sabio", desc: "Busca conocimiento y comprensión." },
+            { name: "Inocente", desc: "Mantiene la pureza y la esperanza." },
+            { name: "Guerrero", desc: "Lucha por sus ideales o por otros." },
+            { name: "Experto", desc: "Destaca en un campo específico." },
+            { name: "Rebelde", desc: "Desafía las normas y la autoridad." },
+            { name: "Amante", desc: "Valora las relaciones y el afecto." },
+            { name: "Bufón", desc: "Aporta humor y ligereza." },
+            { name: "Sobreviviente", desc: "Hace lo necesario para seguir adelante." }
+        ];
+        const pacts = [
+            { name: "Fijación", desc: "Los Segadores a veces toman la forma de un Kin para poder interactuar con este mundo; un objeto único e inalterable, ligado directamente a su recipiente.", powers: ["Regeneration", "Shapeshift", "Absorb", "Mutate", "Fleshcraft", "Parasite"] },
+            { name: "Proyección", desc: "Control sobre huesos y estructuras óseas.", powers: ["Bone Armor", "Skeletal Minions", "Bone Shards", "Ossify", "Bone Meld", "Marrow Drain"] },
+            { name: "Sublimación", desc: "Manipulación de sangre y energía vital.", powers: ["Hemomancy", "Blood Pact", "Vampiric Touch", "Blood Boil", "Sanguine Shield", "Crimson Surge"] },
+            { name: "Manifestación", desc: "Poderes espectrales y posesión.", powers: ["Possession", "Ethereal Form", "Wraith Call", "Soul Bind", "Spectral Blade", "Haunt"] }
+        ];
+        const powers = [
+            { 
+                name: "Regeneration", 
+                desc: "Recuperas heridas rápidamente, incluso en combate.", 
+                tags: ["passive", "instant"] 
+            },
+            { 
+                name: "Shapeshift", 
+                desc: "Puedes alterar tu forma física a voluntad.", 
+                tags: ["active", "instant"] 
+            },
+            { 
+                name: "Absorb", 
+                desc: "Absorbes energía o materia de tu entorno para fortalecerte.", 
+                tags: ["active", "short range"] 
+            },
+            { 
+                name: "Mutate", 
+                desc: "Transformas partes de tu cuerpo para adaptarte a situaciones.", 
+                tags: ["active", "instant"] 
+            },
+            { 
+                name: "Fleshcraft", 
+                desc: "Manipulas la carne de otros seres vivos.", 
+                tags: ["active", "short range"] 
+            },
+            { 
+                name: "Parasite", 
+                desc: "Implantas un parásito que te otorga información o control.", 
+                tags: ["active", "long range"] 
+            },
+            // ...agrega el resto de los poderes aquí...
+        ];
+
+        // State
+        let skillPoints = Array(10).fill(1); // Default 1 point each
+        let selectedSkills2 = [], selectedSkills0 = [];
+        let selectedAgenda = null;
+        let selectedPact = null;
+        let selectedPowers = [];
+
+        // Step 1: Skills
+        const skillsList = document.getElementById('skillsList');
+        skills.forEach((skill, i) => {
+            const li = document.createElement('li');
+            li.textContent = skill.name;
+            li.title = skill.desc; // Tooltip
+            li.dataset.index = i;
+            li.className = 'selected1';
+            li.onmouseenter = () => { showDesc(skill.desc, li); };
+            li.onmouseleave = () => { hideDesc(); };
+            li.onclick = () => {
+                if (li.classList.contains('selected2')) {
+                    li.className = 'selected1';
+                    selectedSkills2 = selectedSkills2.filter(idx => idx !== i);
+                } else if (li.classList.contains('selected0')) {
+                    li.className = 'selected1';
+                    selectedSkills0 = selectedSkills0.filter(idx => idx !== i);
+                } else if (selectedSkills2.length < 2) {
+                    li.className = 'selected2';
+                    selectedSkills2.push(i);
+                } else if (selectedSkills0.length < 3) {
+                    li.className = 'selected0';
+                    selectedSkills0.push(i);
+                }
+                // Recalculate
+                skillPoints = Array(10).fill(1);
+                selectedSkills2.forEach(idx => skillPoints[idx] = 2);
+                selectedSkills0.forEach(idx => skillPoints[idx] = 0);
+                // Update UI
+                Array.from(skillsList.children).forEach((el, idx) => {
+                    if (selectedSkills2.includes(idx)) el.className = 'selected2';
+                    else if (selectedSkills0.includes(idx)) el.className = 'selected0';
+                    else el.className = 'selected1';
+                });
+                // Button enable
+                document.getElementById('toStep2').disabled = !(selectedSkills2.length === 2 && selectedSkills0.length === 3);
+                // Set combined gradients
+                setSkillGradient();
+            };
+            skillsList.appendChild(li);
+        });
+
+        // Skill gradient
+        function getSkillLinearGradient() {
+            // If no skills selected, all white
+            if (selectedSkills2.length === 0) {
+                return "linear-gradient(180deg, #fff 0%, #fff 100%)";
+            }
+            // If one skill selected, use its color and white
+            if (selectedSkills2.length === 1) {
+                const color = skills[selectedSkills2[0]].color;
+                return `linear-gradient(180deg, ${color} 0%, #fff 100%)`;
+            }
+            // If two skills selected, use both colors
+            if (selectedSkills2.length === 2) {
+                const color1 = skills[selectedSkills2[0]].color;
+                const color2 = skills[selectedSkills2[1]].color;
+                return `linear-gradient(180deg, ${color1} 0%, ${color2} 100%)`;
+            }
+            // Fallback
+            return "linear-gradient(180deg, #fff 0%, #fff 100%)";
+        }
+
+        function setSkillGradient() {
+            const gradDiv = document.getElementById('bioImgGradient');
+            gradDiv.style.background = getSkillLinearGradient();
+            gradDiv.style.opacity = "1";
+        }
+
+        setSkillGradient();
+
+        // Step 2: Agenda
+        const agendaList = document.getElementById('agendaList');
+        agendas.forEach((agenda, i) => {
+            const li = document.createElement('li');
+            li.textContent = agenda.name;
+            li.title = agenda.desc;
+            li.onmouseenter = () => showDesc(agenda.desc, li);
+            li.onmouseleave = hideDesc;
+            li.onclick = () => {
+                selectedAgenda = agenda;
+                Array.from(agendaList.children).forEach(el => el.classList.remove('selected'));
+                li.classList.add('selected');
+                document.getElementById('toStep3').disabled = false;
+            };
+            agendaList.appendChild(li);
+        });
+
+        // Step 3: Pact
+        const pactList = document.getElementById('pactList');
+        pacts.forEach((pact, i) => {
+            const li = document.createElement('li');
+            li.textContent = pact.name;
+            li.title = pact.desc;
+            li.onmouseenter = () => showDesc(pact.desc, li);
+            li.onmouseleave = hideDesc;
+            li.onclick = () => {
+                selectedPact = pact;
+                Array.from(pactList.children).forEach(el => el.classList.remove('selected'));
+                li.classList.add('selected');
+                document.getElementById('toStep4').disabled = false;
+            };
+            pactList.appendChild(li);
+        });
+
+        // Step 4: Powers
+        const powersList = document.getElementById('powersList');
+        function renderPowers() {
+            powersList.innerHTML = '';
+            if (!selectedPact) return;
+            selectedPact.powers.forEach((powerName, i) => {
+                const power = powers.find(p => p.name === powerName);
+                const li = document.createElement('li');
+                li.textContent = power.name;
+                li.className = selectedPowers.includes(power.name) ? 'selected' : '';
+                if (selectedPowers.length >= 3 && !selectedPowers.includes(power.name)) li.classList.add('disabled');
+                li.onmouseenter = () => showDesc(
+                    `${power.desc}\n\nTags: ${power.tags.map(t => `<span style="color:#0ff">${t}</span>`).join(', ')}`,
+                    li
+                );
+                li.onmouseleave = hideDesc;
+                li.onclick = () => {
+                    if (selectedPowers.includes(power.name)) {
+                        selectedPowers = selectedPowers.filter(p => p !== power.name);
+                    } else if (selectedPowers.length < 3) {
+                        selectedPowers.push(power.name);
+                    }
+                    renderPowers();
+                    document.getElementById('finish').disabled = selectedPowers.length !== 3;
+                };
+                powersList.appendChild(li);
+            });
+        }
+
+        // Navigation
+        document.getElementById('toStep2').onclick = () => {
+            document.getElementById('step1').classList.remove('active');
+            document.getElementById('step2').classList.add('active');
+        };
+        document.getElementById('toStep3').onclick = () => {
+            document.getElementById('step2').classList.remove('active');
+            document.getElementById('step3').classList.add('active');
+        };
+        document.getElementById('toStep4').onclick = () => {
+            document.getElementById('step3').classList.remove('active');
+            document.getElementById('step4').classList.add('active');
+            selectedPowers = [];
+            renderPowers();
+            document.getElementById('finish').disabled = true;
+        };
+        document.getElementById('finish').onclick = () => {
+            document.getElementById('step4').classList.remove('active');
+            showComposite();
+        };
+
+        // Composite
+        function showComposite() {
+            const composite = document.getElementById('composite');
+            composite.style.display = 'block';
+            // Grungy composite "image" (ASCII + summary)
+            let ascii = `
+<pre style="color:#ff2222; font-size:1.1em; text-align:left;">
+     .-''''-.
+    /        \\
+   /_        _\\
+  (( \\      / ))
+  \\\\_\\    /_//
+     '-.\\  /.-'
+         ||||
+         ||||
+</pre>
+            `;
+            let summary = `<div>
+                <b>Skills:</b><br>
+                <ul style="columns:2; margin:0; padding-left:1.2em;">${
+                    skills.map((s,i)=>`<li>${s.name}: <b>${skillPoints[i]}</b></li>`).join('')
+                }</ul>
+                <b>Agenda:</b> ${selectedAgenda ? selectedAgenda.name : ''}<br>
+                <b>PACT:</b> ${selectedPact ? selectedPact.name : ''}<br>
+                <b>Powers:</b> ${selectedPowers.join(', ')}
+            </div>`;
+            composite.innerHTML = ascii + summary;
+        }
+
+        // Description popup
+        const descDiv = document.createElement('div');
+        descDiv.style.position = 'fixed';
+        descDiv.style.background = '#222';
+        descDiv.style.color = '#0f0';
+        descDiv.style.padding = '0.7em 1em';
+        descDiv.style.border = '2px solid #0f0';
+        descDiv.style.borderRadius = '8px';
+        descDiv.style.zIndex = 1000;
+        descDiv.style.display = 'none';
+        descDiv.style.maxWidth = '260px';
+        descDiv.style.pointerEvents = 'none';
+        document.body.appendChild(descDiv);
+
+        function showDesc(text, el) {
+            descDiv.textContent = text;
+            descDiv.style.display = 'block';
+            const rect = el.getBoundingClientRect();
+            descDiv.style.left = (rect.right + 10) + 'px';
+            descDiv.style.top = (rect.top - 10) + 'px';
+        }
+        function hideDesc() {
+            descDiv.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
