@@ -277,7 +277,9 @@ section {
 }
 
 .workSectionPhone {
-  width: 980px;
+  max-width: 980px;
+  width: 100%;
+  padding: 0 1em;
   margin: auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr) repeat(3, 0);
@@ -836,6 +838,17 @@ button {
 
   .imgDiv {
     width: 100%;
+  }
+
+  /* Phone Section */
+  .workSectionPhone {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .workImagePhone {
+    grid-area: auto;
+    margin-bottom: 2em;
   }
 
   /* Inside Work */
