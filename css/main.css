@@ -171,6 +171,9 @@ section {
   margin: auto;
   padding: 8em 0;
 }
+.workTextP:hover {
+  transform: translateY(-4px);
+}
 .workRoles div {
   display: inline-block;
   background-color: var(--ColorDimmed01);
@@ -180,6 +183,11 @@ section {
   color: var(--ColorDark02);
   border-radius: 0.2em;
   font-size: small;
+  transition: all 0.25s ease-in-out;
+}
+
+.workRoles div:hover {
+  transform: translate(0px, -4px);
 }
 
 .techStack div {
@@ -192,8 +200,11 @@ section {
   color: var(--ColorDark01);
   border-radius: 0.2em;
   font-size: smaller;
+  transition: all 0.25s cubic-bezier(0.46, 0.03, 0.52, 0.96);
 }
-
+.techStack div:hover {
+  transform: translate(0px, -4px);
+}
 .workTextSection {
   width: 980px;
   margin: auto;
@@ -224,11 +235,19 @@ section {
   color: black;
   text-decoration: none;
 }
+.workText .a p {
+  transition: transform 0.6s;
+}
+.workText .a p:hover {
+  transform: scale(1.1);
+}
+
 .workTextP {
   font-family: "Nunito", sans-serif;
   font-size: 0.9em;
   font-weight: 200;
   font-style: normal;
+  transition: transform 0.3s ease;
 }
 .workImage {
   width: 980px;
@@ -553,7 +572,39 @@ section {
   font-weight: 700;
 }
 
-/* SHAPES ANIMATIONS */
+/* ////////////////////////// */
+/* SVG A N I M A T I O N S  */
+/* ////////////////////////// */
+
+.logoIcon {
+  transition: all 0.6s ease;
+}
+.logoIcon:hover {
+  animation: logoIconRotate 1s infinite, clickAnim 0.5s infinite steps(1);
+}
+@keyframes logoIconRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  5% {
+    transform: rotate(15deg);
+  }
+  15% {
+    transform: rotate(-15deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  35% {
+    transform: rotate(-5deg);
+  }
+  45% {
+    transform: rotate(1deg);
+  }
+  50% {
+    transform: rotate(-1deg);
+  }
+}
 
 .chevron {
   width: 5em;
@@ -607,10 +658,6 @@ section {
     transform: rotate(360deg);
   }
 }
-
-/* ////////////////////////// */
-/* SVG A N I M A T I O N S  */
-/* ////////////////////////// */
 
 .colorWhite {
   fill: #fff;
@@ -775,8 +822,17 @@ a,
 button {
   animation: clickAnim 0.5s infinite steps(1) !important;
 }
+#navbar,
+#navbar * {
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
 
+/* //////////////////////// */
 /* MOBILE RESPONSIVE RULES */
+/* ////////////////////// */
+
 @media (max-width: 768px) {
   /* General font scaling */
   body {

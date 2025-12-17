@@ -2,14 +2,13 @@
 <html lang="eng">
 <head>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-4SG1SS1SQB"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
-
-		  gtag('config', 'G-4SG1SS1SQB');
-		</script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-4SG1SS1SQB"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	  gtag('config', 'G-4SG1SS1SQB');
+	</script>
 
 	<!-- Mobile Specific Meta -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -44,7 +43,7 @@
 	<body>
 		<div id="navbar" class="navbar">
 			<div class="logo">
-				<div class="logoIcon">
+				<div class="logoIcon" id="logoButton" role="button" aria-label="Change color theme">
 					<?xml version="1.0" encoding="UTF-8"?>
 					<svg id="Isolation_Mode" data-name="Isolation Mode" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30.3 30.27">
 					<polygon class="svgLogo" points="11.82 21.36 11.76 20.67 10.69 21.4 9.76 22.22 9.05 22.94 8.68 23.87 8.37 24.81 8.85 26.03 9.97 26.8 10.96 26.33 11.36 25.38 11.71 24.43 11.63 23.4 11.72 22.38 11.82 21.36"/>
@@ -239,7 +238,7 @@
 
 					<div class="details">
 						<a href="#love">
-							Details <span class="arrow">&#8594;</span>
+							<p>Details <span class="arrow">&#8594;</span></p>
 						</a>
 					</div>
 				</div>
@@ -827,21 +826,21 @@
 
 	</body>
 	<script>
+		
 		const chevron = document.querySelector('.chevron');
 
-chevron.addEventListener('click', () => {
-  const sections = Array.from(document.querySelectorAll('section'));
-  const currentY = window.scrollY;
+		chevron.addEventListener('click', () => {
+		const sections = Array.from(document.querySelectorAll('section'));
+		const currentY = window.scrollY;
 
-  const next = sections.find(sec => sec.offsetTop > currentY + 10);
+		const next = sections.find(sec => sec.offsetTop > currentY + 10);
 
-  if (next) {
-    next.scrollIntoView({ behavior: 'smooth' });
-  }
-});
-
+		if (next) {
+			next.scrollIntoView({ behavior: 'smooth' });
+		}
+		});
 			
-			var palettes = [
+		var palettes = [
 			  ['#00BABC', '#80dcdd', '#bfedee', '#009596', '#09605e'],
 			  ['#efc100', '#ffe05c', '#ffeda1', '#aa8e17', '#665614'],
 			  ['#ea2da6', '#ff64d0', '#ffc0ec', '#a52b7f', '#6d1b58'],
@@ -849,26 +848,47 @@ chevron.addEventListener('click', () => {
 			  ['#0176de', '#67adeb', '#cce4f8', '#0f5491', '#03112e'],
 			  ['#ff6f59', '#ff9b8a', '#ffc8bc', '#cc4a3f', '#662823']
 			];
-			var randomPalette = palettes[Math.floor(Math.random() * palettes.length)];
-			
-			document.documentElement.style.setProperty('--mainColor', randomPalette[0]);
-			document.documentElement.style.setProperty('--ColorDimmed01', randomPalette[1]);
-			document.documentElement.style.setProperty('--ColorDimmed02', randomPalette[2]);
-			document.documentElement.style.setProperty('--ColorDark01', randomPalette[3]);
-			document.documentElement.style.setProperty('--ColorDark02', randomPalette[4]);
-			
-			
+		let currentPaletteIndex = -1;
 
-			var prevScrollpos = window.pageYOffset;
-			window.onscroll = function() {
-				var currentScrollPos = window.pageYOffset;
-				if (prevScrollpos > currentScrollPos) {
-					document.getElementById("navbar").style.top = "0";
-				} else {
-					document.getElementById("navbar").style.top = "-4em";
-				}
-				prevScrollpos = currentScrollPos;
+		function applyRandomPalette() {
+			let newIndex;
+
+			do {
+				newIndex = Math.floor(Math.random() * palettes.length);
+			} while (newIndex === currentPaletteIndex);
+
+			currentPaletteIndex = newIndex;
+			const palette = palettes[newIndex];
+
+			document.documentElement.style.setProperty('--mainColor', palette[0]);
+			document.documentElement.style.setProperty('--ColorDimmed01', palette[1]);
+			document.documentElement.style.setProperty('--ColorDimmed02', palette[2]);
+			document.documentElement.style.setProperty('--ColorDark01', palette[3]);
+			document.documentElement.style.setProperty('--ColorDark02', palette[4]);
+		}
+
+
+		var prevScrollpos = window.pageYOffset;
+		window.onscroll = function() {
+			var currentScrollPos = window.pageYOffset;
+			if (prevScrollpos > currentScrollPos) {
+				document.getElementById("navbar").style.top = "0";
+			} else {
+				document.getElementById("navbar").style.top = "-4em";
 			}
+			prevScrollpos = currentScrollPos;
+		}
+		const logoButton = document.getElementById('logoButton');
+
+		logoButton.addEventListener('click', () => {
+		applyRandomPalette();
+		});
+
+		document.addEventListener('DOMContentLoaded', () => {
+			applyRandomPalette();
+		});
+
+
 
 // 		       ______              
 //        .d$$$******$$$$c.        
