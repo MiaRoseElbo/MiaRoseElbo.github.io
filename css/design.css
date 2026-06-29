@@ -1,10 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700");
+@import url("https://fonts.googleapis.com/css2?family=Fruktur:ital@0;1&family=New+Rocker&family=UnifrakturCook:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000");
 
 body {
   font-family: "Josefin Sans", sans-serif;
   font-size: 14px;
   font-weight: 300;
+  background-color: var(--white);
+  margin: 0;
 }
 
 /* TITLE */
@@ -108,11 +111,6 @@ body {
   margin-top: 20vh;
 }
 
-section {
-  padding-bottom: 10em;
-  border-bottom: #ddd 2px solid;
-}
-
 /* ///////////////// */
 /* // SVG STYLES /// */
 /* ///////////////// */
@@ -163,221 +161,23 @@ section {
   fill: white;
 }
 
+/* Earring links pivot from the top so they swing like a hanging chain */
+#ferSkullEarringLink1,
+#ferSkullEarringLink2 {
+  transform-box: fill-box;
+  transform-origin: center top;
+}
+
 /* /////////////////// */
 /* // WORK SECTION /// */
 /* /////////////////// */
 
 .workSection {
-  margin: auto;
-  padding: 8em 0;
-}
-.workTextP:hover {
-  transform: translateY(-4px);
-}
-.workRoles div {
-  display: inline-block;
-  background-color: var(--ColorDimmed01);
-  padding: 0.4em 0.8em;
-  margin: 0.5em 0.5em 0.5em 0;
-  font-weight: 700;
-  color: var(--ColorDark02);
-  border-radius: 0.2em;
-  font-size: small;
-  transition: all 0.25s ease-in-out;
-}
-
-.workRoles div:hover {
-  transform: translate(0px, -4px);
-}
-
-.techStack div {
-  opacity: 0.5;
-  display: inline-block;
-  background-color: var(--ColorDimmed02);
-  padding: 0.4em 0.8em;
-  margin: 0.5em 0.5em 0 0;
-  font-weight: 700;
-  color: var(--ColorDark01);
-  border-radius: 0.2em;
-  font-size: smaller;
-  transition: all 0.25s cubic-bezier(0.46, 0.03, 0.52, 0.96);
-}
-.techStack div:hover {
-  transform: translate(0px, -4px);
-}
-.workTextSection {
-  width: 980px;
-  margin: auto;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-}
-.workTitleH1 {
-  font-weight: 700;
-  font-size: 3em;
-}
-.workTitleH2 {
-  font-weight: 500;
-  font-size: 1.5em;
-  color: #ccc;
-}
-.workText {
-  font-size: 1.5em;
-}
-.workText .details {
-  margin: 1em 0 2em 0;
-  font-size: 1.2em;
-  font-weight: 500;
-}
-.workText .details a {
-  color: black;
-  text-decoration: none;
-}
-.workText .a p {
-  transition: transform 0.6s;
-}
-.workText .a p:hover {
-  transform: scale(1.1);
-}
-
-.workTextP {
-  font-family: "Nunito", sans-serif;
-  font-size: 0.9em;
-  font-weight: 200;
-  font-style: normal;
-  transition: transform 0.3s ease;
-}
-.workImage {
-  width: 980px;
-  aspect-ratio: 16/9;
-  border-radius: 1em;
-  border: black 1em solid;
-  box-shadow: 0.1em 0.1em 0.2em 0.2em rgba(0, 0, 0, 0.25);
-  background-size: cover;
-  margin: auto;
-}
-
-.arrow {
-  color: var(--mainColor);
-}
-
-.img_inside {
-  width: 100%;
-}
-
-.workImage {
-  overflow: hidden;
-  background-color: black;
-}
-
-.imgDiv {
-  width: 997px;
-  height: 100%;
-  overflow-y: scroll;
-}
-
-.aboutSection {
-  position: fixed;
-  left: 0px;
-  top: 0px;
-  background-color: white;
-  height: 100vh;
-  padding: 4em;
-}
-
-/* ////////////////////////// */
-/* // WORK SECTION PHONE /// */
-/* //////////////////////// */
-
-.workSectionPhone {
-  margin: auto;
-  padding: 8em 0;
-}
-
-.workSectionPhone {
-  max-width: 980px;
-  width: 100%;
-  padding: 0 1em;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr) repeat(3, 0);
-  grid-template-rows: 1fr repeat(4, 0);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-}
-
-.workImagePhone {
-  width: 275px;
-  height: 592px;
-  border-radius: 40px 40px 40px 40px;
-  border: black 1em solid;
-  box-shadow: 0.1em 0.1em 0.2em 0.2em rgba(0, 0, 0, 0.25);
-  background-size: cover;
-  margin: auto;
-  grid-area: 1 / 1 / 3 / 2;
-  overflow: hidden;
-}
-
-.imgInsidePhone {
-  width: 275px;
-  height: 1092px;
-  position: relative;
-  left: 0px;
-  top: 0px;
-  animation: imgPhoneSlide 8s ease-in-out infinite;
-}
-
-@keyframes imgPhoneSlide {
-  0% {
-    top: 0px;
-    animation-timing-function: ease-in;
-  }
-  25% {
-    top: -250px;
-    animation-timing-function: ease;
-  }
-  50% {
-    top: -500px;
-    animation-timing-function: ease;
-  }
-  75% {
-    top: -250px;
-    animation-timing-function: ease;
-  }
-  100% {
-    top: 0px;
-    animation-timing-function: ease-out;
-  }
-}
-
-.imgInsidePhoneOverlay {
-  width: 275px;
-  height: 593px;
-  position: relative;
-  top: -1097px;
-  left: 0px;
-}
-
-.workImage {
-  overflow: hidden;
-  background-color: black;
-}
-
-.imgDiv {
-  width: 997px;
-  height: 100%;
-  overflow-y: scroll;
-}
-
-.aboutSection {
-  position: fixed;
-  left: 0px;
-  top: 0px;
-  background-color: white;
-  height: 100vh;
-  padding: 4em;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 6em 14em;
+  grid-gap: 8em;
 }
 
 /* /////////////// */
@@ -394,6 +194,7 @@ section {
   transition: opacity 200ms;
   visibility: hidden;
   opacity: 0;
+  z-index: 10;
 }
 
 .overlay:target {
@@ -421,9 +222,8 @@ section {
   font-weight: 300;
   color: var(--mainColor);
   text-decoration: none;
-  position: fixed;
+  position: sticky;
   left: calc(100% - 1em);
-  top: 0;
   width: 100%;
 }
 
@@ -514,18 +314,25 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
   background: var(--mainColor);
-  transition: opacity 200ms;
+  transform: translateY(100%);
+  transition:
+    transform 450ms cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 450ms;
   visibility: hidden;
-  opacity: 0;
+  opacity: 1;
+  z-index: 10;
 }
 .overlayWork:target {
   visibility: visible;
-  opacity: 1;
+  transform: translateY(0);
 }
 .insideWork {
   width: 980px;
+  max-width: 100%;
+  box-sizing: border-box;
   margin: auto;
 }
 
@@ -564,10 +371,20 @@ section {
   margin: 0.2em 0 1em;
   font-family: "Nunito", sans-serif;
 }
+.insideWork .workTitleH1 {
+  font-size: 7em;
+  font-weight: 700;
+  text-align: center;
+}
 .insideWork .workTitleH2 {
   margin-bottom: 2em;
+  font-size: 1.4em;
+  text-align: center;
 }
-
+.innerText ul li {
+  font-size: 1.2em;
+  line-height: 1.5em;
+}
 .bolder {
   font-weight: 700;
 }
@@ -580,7 +397,9 @@ section {
   transition: all 0.6s ease;
 }
 .logoIcon:hover {
-  animation: logoIconRotate 1s infinite, clickAnim 0.5s infinite steps(1);
+  animation:
+    logoIconRotate 1s infinite,
+    clickAnim 0.5s infinite steps(1);
 }
 @keyframes logoIconRotate {
   0% {
@@ -606,19 +425,6 @@ section {
   }
 }
 
-.chevron {
-  width: 5em;
-  margin: auto;
-  animation-name: floating;
-  animation-duration: 5s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-  position: relative;
-  top: 4em;
-}
-.chevron svg {
-  width: 100%;
-}
 .shapes {
   position: absolute;
   animation-name: floating;
@@ -643,7 +449,7 @@ section {
     transform: translate(0, 0px);
   }
   40% {
-    transform: translate(0, 2em);
+    transform: translate(0, 7em);
   }
   to {
     transform: translate(0, -0px);
@@ -677,139 +483,110 @@ section {
 .colorDimmed02 {
   fill: var(--ColorDimmed02);
 }
-.skin01 {
-  fill: #e9c0ac;
-}
-.skin02 {
-  fill: #dfa890;
-}
-#mia_arm {
-  transform-origin: 380px 245px;
-  animation: waveArm 2s ease-in-out infinite alternate;
-}
-#mia_hand {
-  transform-origin: 398px 110px;
-  animation: waveHand 2s linear infinite alternate forwards;
-}
-#mia_eyes {
-  transform-origin: 223px 87px;
-  animation: blinkEyes 4s infinite;
-}
-@keyframes waveArm {
-  0% {
-    transform: rotate(-15deg);
-  }
-  100% {
-    transform: rotate(15deg);
-  }
-}
-@keyframes waveHand {
-  0% {
-    transform: rotate(-30deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
-@keyframes blinkEyes {
-  0% {
-    transform: scale(1, 1);
-  }
-  10% {
-    transform: scale(1, 1);
-  }
-  11% {
-    transform: scale(1, 0);
-  }
-  12% {
-    transform: scale(1, 1);
-  }
-  30% {
-    transform: scale(1, 1);
-  }
-  31% {
-    transform: scale(1, 0);
-  }
-  32% {
-    transform: scale(1, 1);
-  }
-  36% {
-    transform: scale(1, 1);
-  }
-  37% {
-    transform: scale(1, 0);
-  }
-  38% {
-    transform: scale(1, 1);
-  }
-  100% {
-    transform: scale(1, 1);
-  }
-}
 
 @keyframes cursorAnim {
   0% {
-    cursor: url("../assets/cursor/cursor01.svg") 4 4, auto;
+    cursor:
+      url("../assets/cursor/cursor01.svg") 4 4,
+      auto;
   }
   10% {
-    cursor: url("../assets/cursor/cursor02.svg") 4 4, auto;
+    cursor:
+      url("../assets/cursor/cursor02.svg") 4 4,
+      auto;
   }
   17.5% {
-    cursor: url("../assets/cursor/cursor03.svg") 4 4, auto;
+    cursor:
+      url("../assets/cursor/cursor03.svg") 4 4,
+      auto;
   }
   25% {
-    cursor: url("../assets/cursor/cursor04.svg") 4 4, auto;
+    cursor:
+      url("../assets/cursor/cursor04.svg") 4 4,
+      auto;
   }
   32.5% {
-    cursor: url("../assets/cursor/cursor03.svg") 4 4, auto;
+    cursor:
+      url("../assets/cursor/cursor03.svg") 4 4,
+      auto;
   }
   40% {
-    cursor: url("../assets/cursor/cursor02.svg") 4 4, auto;
+    cursor:
+      url("../assets/cursor/cursor02.svg") 4 4,
+      auto;
   }
   47.5% {
-    cursor: url("../assets/cursor/cursor01.svg") 4 4, auto;
+    cursor:
+      url("../assets/cursor/cursor01.svg") 4 4,
+      auto;
   }
   55% {
-    cursor: url("../assets/cursor/cursor05.svg") 4 4, auto;
+    cursor:
+      url("../assets/cursor/cursor05.svg") 4 4,
+      auto;
   }
   62.5% {
-    cursor: url("../assets/cursor/cursor06.svg") 4 4, auto;
+    cursor:
+      url("../assets/cursor/cursor06.svg") 4 4,
+      auto;
   }
   70% {
-    cursor: url("../assets/cursor/cursor07.svg") 4 4, auto;
+    cursor:
+      url("../assets/cursor/cursor07.svg") 4 4,
+      auto;
   }
   77.5% {
-    cursor: url("../assets/cursor/cursor06.svg") 4 4, auto;
+    cursor:
+      url("../assets/cursor/cursor06.svg") 4 4,
+      auto;
   }
   85% {
-    cursor: url("../assets/cursor/cursor05.svg") 4 4, auto;
+    cursor:
+      url("../assets/cursor/cursor05.svg") 4 4,
+      auto;
   }
 }
 
 @keyframes clickAnim {
   0% {
-    cursor: url("../assets/cursor/click01.svg") 4 4, auto;
+    cursor:
+      url("../assets/cursor/click01.svg") 4 4,
+      auto;
   }
   20% {
-    cursor: url("../assets/cursor/click02.svg") 4 4, auto;
+    cursor:
+      url("../assets/cursor/click02.svg") 4 4,
+      auto;
   }
   30% {
-    cursor: url("../assets/cursor/click03.svg") 4 4, auto;
+    cursor:
+      url("../assets/cursor/click03.svg") 4 4,
+      auto;
   }
   40% {
-    cursor: url("../assets/cursor/click04.svg") 4 4, auto;
+    cursor:
+      url("../assets/cursor/click04.svg") 4 4,
+      auto;
   }
   50% {
-    cursor: url("../assets/cursor/click05.svg") 4 4, auto;
+    cursor:
+      url("../assets/cursor/click05.svg") 4 4,
+      auto;
   }
   60% {
-    cursor: url("../assets/cursor/click04.svg") 4 4, auto;
+    cursor:
+      url("../assets/cursor/click04.svg") 4 4,
+      auto;
   }
   70% {
-    cursor: url("../assets/cursor/click03.svg") 4 4, auto;
+    cursor:
+      url("../assets/cursor/click03.svg") 4 4,
+      auto;
   }
   80% {
-    cursor: url("../assets/cursor/click02.svg") 4 4, auto;
+    cursor:
+      url("../assets/cursor/click02.svg") 4 4,
+      auto;
   }
 }
 
@@ -953,5 +730,178 @@ button,
   .contactList a {
     display: block;
     margin: 0.5em 0;
+  }
+}
+
+/* ////////////////////// */
+/* GRAPHIC DESIGN STYLES */
+/* //////////////////// */
+.gd_banner {
+  width: 100%;
+  margin: auto;
+  margin-top: 20vh;
+}
+.gd_h1 {
+  font-size: 14vw;
+  font-weight: 800;
+  text-align: center;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gd_h1 div {
+  transition: transform 0.25s ease-in-out;
+  width: 14vw;
+  height: 18vw;
+}
+.gd_h1 div:hover {
+  transform: translate(0px, -30px);
+  background-color: black;
+  color: white;
+}
+.gd_h1 .gd_span_01:hover {
+  font-family: "UnifrakturCook", cursive;
+}
+.gd_h1 .gd_span_02:hover {
+  font-family: "New Rocker", cursive;
+}
+.gd_h1 .gd_span_03:hover {
+  font-family: "Fruktur", cursive;
+}
+.gd_h1 .gd_span_04:hover {
+  font-family: "New Rocker", cursive;
+}
+.gd_h1 .gd_span_05:hover {
+  font-family: "Fruktur", cursive;
+}
+.gd_subtitle {
+  display: flex;
+  margin: auto;
+  width: 80vw;
+}
+.gd_pointingDown {
+  width: 18vw;
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+.gd_h2 {
+  color: var(--mainColor);
+  font-size: 6vw;
+  font-weight: 900;
+  text-align: right;
+  margin-top: 0.2em;
+}
+
+.project {
+}
+.projectImg {
+  width: 100%;
+}
+.projectImg img {
+  width: 100%;
+}
+section {
+  background-color: var(--white);
+  transition: all 0.3s ease-in-out;
+}
+/*section:has(.project:hover) {
+  background-color: var(--mainColor);
+}*/
+
+section:has(#encuadreHover:hover) {
+  background-color: #efc100;
+}
+section:has(#projectHover:hover) {
+  background-color: #9f46ce;
+}
+section:has(#chamanHover:hover) {
+  background-color: #0176de;
+}
+section:has(#projectHover:hover) {
+  background-color: #ff6f59;
+}
+section:has(#euforiaHover:hover) {
+  background-color: #00babc;
+}
+section:has(#euforiaHover:hover) {
+  background-color: #ea2da6;
+}
+
+#er_text {
+  transform-origin: 600px 600px;
+  animation: erTextRotate 10s infinite linear;
+}
+@keyframes erTextRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#enquadre_app_anim {
+  transform-box: fill-box;
+  transform-origin: center center;
+  animation: enquadreappanim 1s infinite alternate ease-in-out;
+}
+
+@keyframes enquadreappanim {
+  0% {
+    transform: translate(430px, 214px) rotate(15deg);
+  }
+  100% {
+    transform: translate(430px, 214px) rotate(25deg);
+  }
+}
+
+#enquadre_sun_anim {
+  transform-box: fill-box;
+  transform-origin: center center;
+  animation: enquadresunanim 60s infinite reverse linear;
+}
+
+@keyframes enquadresunanim {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#enquadre_sun_anim2 {
+  transform-box: fill-box;
+  transform-origin: center center;
+  animation: enquadresunanim2 45s infinite linear;
+}
+
+@keyframes enquadresunanim2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#enquadre_sun_shine {
+  transform-box: fill-box;
+  transform-origin: center center;
+  animation: enquadresunshine 10s infinite linear;
+}
+
+@keyframes enquadresunshine {
+  0% {
+    transform: rotate(0deg) scale(0.95);
+  }
+  50% {
+    transform: rotate(18deg) scale(1.05);
+  }
+  100% {
+    transform: rotate(36deg) scale(0.95);
   }
 }
