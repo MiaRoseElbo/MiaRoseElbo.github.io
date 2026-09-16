@@ -905,3 +905,32 @@ section:has(#euforiaHover:hover) {
     transform: rotate(36deg) scale(0.95);
   }
 }
+
+.chamanBg {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.chamanBg video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.chamanBg img.chamanLogo {
+  width: auto;
+  height: auto;
+  max-width: 60%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}

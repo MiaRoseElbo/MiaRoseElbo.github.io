@@ -1,60 +1,85 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Interactive Map</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
     <style>
-        body, html { margin: 0; padding: 0; width: 100%; height: 100%; }
-        #map { width: 100vw; height: 100vh; }
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+      }
+      #map {
+        width: 100vw;
+        height: 100vh;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div id="map"></div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
-        // Create the map instance
-        const map = L.map('map', {
-            crs: L.CRS.Simple,
-            minZoom: -2,
-            maxZoom: 2,
-            zoomSnap: 0.1
-        });
+      // Create the map instance
+      const map = L.map("map", {
+        crs: L.CRS.Simple,
+        minZoom: -2,
+        maxZoom: 2,
+        zoomSnap: 0.1,
+      });
 
-        // Image dimensions
-        const w = 6120, h = 7920;
-        const bounds = [[0, 0], [h, w]];
+      // Image dimensions
+      const w = 6120,
+        h = 7920;
+      const bounds = [
+        [0, 0],
+        [h, w],
+      ];
 
-        // Add the image as a map layer
-        L.imageOverlay('./img/Vesper-Map-Full.png', bounds).addTo(map);
-        map.fitBounds(bounds);
+      // Add the image as a map layer
+      L.imageOverlay("./img/Vesper-Map-Full.png", bounds).addTo(map);
+      map.fitBounds(bounds);
 
-        // Define some areas with tooltips
-        const areas = [
-            {
-                name: "Castle Ruins",
-                shape: "rectangle",
-                bounds: [[5000, 2000], [5500, 2500]],
-                color: "red"
-            },
-            {
-                name: "Mysterious Cave",
-                shape: "circle",
-                center: [3500, 4000],
-                radius: 300,
-                color: "blue"
-            },
-            {
-                name: "Ancient Shrine",
-                shape: "polygon",
-                points: [[2000, 1000], [2500, 1200], [2300, 1600], [1800, 1400]],
-                color: "green"
-            }
-        ];
+      // Define some areas with tooltips
+      const areas = [
+        {
+          name: "Castle Ruins",
+          shape: "rectangle",
+          bounds: [
+            [5000, 2000],
+            [5500, 2500],
+          ],
+          color: "red",
+        },
+        {
+          name: "Mysterious Cave",
+          shape: "circle",
+          center: [3500, 4000],
+          radius: 300,
+          color: "blue",
+        },
+        {
+          name: "Ancient Shrine",
+          shape: "polygon",
+          points: [
+            [2000, 1000],
+            [2500, 1200],
+            [2300, 1600],
+            [1800, 1400],
+          ],
+          color: "green",
+        },
+      ];
 
-        // Add areas to the map
+      // Add areas to the map
+      /*
         areas.forEach(area => {
             let shape;
             if (area.shape === "rectangle") {
@@ -70,8 +95,7 @@
                     .bindPopup(`<b>${area.name}</b>`)
                     .on("click", function () { this.openPopup(); });
             }
-        });
-
+        });*/
     </script>
-</body>
+  </body>
 </html>
